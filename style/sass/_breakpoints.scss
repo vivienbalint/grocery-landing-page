@@ -1,0 +1,18 @@
+$breakpoints: (
+  "mobile-md": 375px,
+  "mobile-lg": 400px,
+  "tablet-md": 768px,
+  "tablet-lg": 900px,
+  "desktop": 1025px,
+  "wide": 2000px,
+) !default;
+
+// Map to breakpoints
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}

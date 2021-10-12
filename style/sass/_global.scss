@@ -1,0 +1,19 @@
+@import "./variables";
+@import "./breakpoints";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#page-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-family: $font;
+  background-color: $primary-color;
+  color: $secondary-color;
+  @include respond-to("desktop") {
+    position: unset;
+  }
+}

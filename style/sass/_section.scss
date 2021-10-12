@@ -1,0 +1,84 @@
+@import "./breakpoints";
+@import "./variables";
+
+#section {
+  @include respond-to("desktop") {
+    display: flex;
+  }
+}
+
+.text-container {
+  padding: 10px 0;
+  text-align: center;
+  line-height: 170%;
+
+  @include respond-to("desktop") {
+    padding-left: 45px;
+    width: 50vw;
+    text-align: left;
+    z-index: 2;
+  }
+
+  .title {
+    padding: 10px 0;
+    font-size: 40px;
+    @include respond-to("mobile-md") {
+      padding: 20px 0;
+      font-size: 45px;
+    }
+    @include respond-to("mobile-lg") {
+      font-size: 50px;
+    }
+    @include respond-to("tablet-md") {
+      padding: 25px 0;
+      font-size: 55px;
+    }
+    @include respond-to("tablet-lg") {
+      padding: 40px 0;
+      font-size: 65px;
+    }
+    @include respond-to("desktop") {
+      padding: 60px 0 40px;
+      font-size: 75px;
+    }
+  }
+  .text {
+    padding: 10px 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    @include respond-to("mobile-md") {
+      padding: 10px 10px 30px;
+      font-size: 20px;
+    }
+    @include respond-to("mobile-lg") {
+      padding: 20px 10px 30px;
+      font-size: 22px;
+    }
+    @include respond-to("tablet-md") {
+      margin: auto;
+      width: 80vw;
+      font-size: 25px;
+    }
+    @include respond-to("tablet-lg") {
+      font-size: 30px;
+      line-height: 150%;
+    }
+    @include respond-to("desktop") {
+      padding: 40px 0;
+      margin: unset;
+      max-width: 50vw;
+      font-size: 32px;
+    }
+  }
+}
+
+.img {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  @include respond-to("desktop") {
+    right: 0;
+    max-width: 50vw;
+  }
+}

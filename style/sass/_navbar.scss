@@ -1,0 +1,99 @@
+@import "./variables";
+@import "./breakpoints";
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 15px;
+
+  @include respond-to("tablet-md") {
+    padding: 20px 45px;
+  }
+
+  #logo {
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    color: $secondary-color;
+    @include respond-to("mobile-md") {
+      font-size: 16px;
+    }
+    @include respond-to("mobile-lg") {
+      font-size: 18px;
+    }
+    @include respond-to("tablet-md") {
+      font-size: 20px;
+    }
+    @include respond-to("tablet-lg") {
+      font-size: 25px;
+    }
+  }
+}
+
+.desktop-list {
+  display: none;
+  @include respond-to("tablet-md") {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45vw;
+    list-style: none;
+    font: {
+      weight: 500;
+      size: 20px;
+    }
+    & .list-item {
+      color: $secondary-color;
+      text-decoration: none;
+    }
+  }
+  @include respond-to("tablet-lg") {
+    position: sticky;
+    width: 40vw;
+    font-size: 25px;
+    z-index: 2;
+  }
+  & li {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+#sidebar {
+  position: absolute;
+  width: 70vw;
+  height: 100vh;
+  top: 0;
+  background-color: $secondary-color;
+  z-index: 2;
+
+  @include respond-to("tablet-md") {
+    display: none;
+  }
+
+  .mobile-list {
+    padding: 20px 5px 20px 20px;
+    text-transform: uppercase;
+    font: {
+      weight: 500;
+      size: 20px;
+    }
+    line-height: 300%;
+    list-style: none;
+    & .list-item {
+      color: $primary-color;
+      text-decoration: none;
+    }
+    @include respond-to("mobile-md") {
+      font-size: 24px;
+      line-height: 350%;
+    }
+    @include respond-to("mobile-lg") {
+      font-size: 27px;
+    }
+  }
+}
